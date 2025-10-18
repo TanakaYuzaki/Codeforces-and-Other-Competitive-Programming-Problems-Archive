@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+int main(){
+    string sample;
+    cin>>sample;
+    int res = 0;
+    
+    int length = sample.length();
+
+    for(int i = 0; i < length; i++){
+        int l = i-1;
+        int r = i+1;
+        int Count = 1;
+        while(l >= 0 && r < length){
+            if(tolower(sample[l]) == tolower(sample[r])){
+                Count += 2;
+            }
+            else{
+                break;
+            }
+            l -= 1;
+            r += 1;
+
+        }
+        if(res < Count){
+            res = Count;
+        }
+        
+    }
+
+    for(int i = 0; i < length-1; i++){
+        int l = i;
+        int r = i+1;
+        int count = 0;
+        while(l >= 0 && r < length){
+            if(tolower(sample[l]) == tolower(sample[r])){
+                count += 2;
+            }
+            else{
+                break;
+            }
+            l -= 1;
+            r += 1;
+        }
+        if(res < count){
+            res = count;
+        }
+    }
+
+    cout<<res;
+
+}
