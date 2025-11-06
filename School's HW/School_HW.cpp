@@ -1,34 +1,49 @@
 #include <iostream>
-#include <cmath>
-
 using namespace std;
 
-void check(int year,int days){
-    if((year%4 == 0 && !(year%100 == 0)) || (year%4 == 0 && year%400 == 0)){
-        cout<<"This is a leap year"<<endl;
-        if(days == 29){
-            cout<<2;
-        }
-    }
-
-    if(days == 31){
-        cout<<1<<" "<<" "<<3<<" "<<5<<" "<<7<<" "<<8<<" "<<10<<" "<<12;
-    }
-    if(days == 30){
-        cout<<2<<" "<<4<<" "<<6<<" "<<9<<" "<<11;
-    }
-    if(days == 28){
-        cout<<2;
-    }
-
-
+int main() {
+    int number;
     
+    // Input
+    cout << "Enter a number (0-9): ";
+    cin >> number;
     
-
-
-}
-int main(){
-    int year,days;
-    cin>>year>>days;
-    check(year,days);
+    // Switch-case to convert number to word
+    switch (number) {
+        case 0:
+            cout << "Zero" << endl;
+            break;
+        case 1:
+            cout << "One" << endl;
+            break;
+        case 2:
+            cout << "Two" << endl;
+            break;
+        case 3:
+            cout << "Three" << endl;
+            break;
+        case 4:
+            cout << "Four" << endl;
+            break;
+        case 5:
+            cout << "Five" << endl;
+            break;
+        case 6:
+            cout << "Six" << endl;
+            break;
+        case 7:
+            cout << "Seven" << endl;
+            break;
+        case 8:
+            cout << "Eight" << endl;
+            break;
+        case 9:
+            cout << "Nine" << endl;
+            break;
+        default:
+            cout << "Invalid input! Please enter a number between 0 and 9." << endl;
+            break;
+    }
+    
+    return 0;
 }
